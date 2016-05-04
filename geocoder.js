@@ -50,7 +50,6 @@
         var address = this.attr(settings.attr.address);
         var lat = this.attr(settings.attr.latitude);
         var lng = this.attr(settings.attr.longitude);
-        var self = this;
 
         this.html(settings.text.loading_text);
 
@@ -61,7 +60,7 @@
             request.location = { lat: parseFloat(lat), lng: parseFloat(lng) };
         }
 
-        var inst = new Geocoder(this, request);
+        new Geocoder(this, request);
 
         // Always return this to be chainable
         return this;
